@@ -1,8 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(){
-    
+    //default size
     createBoard(16);
+
+    let color = "black";
     
-    console.log('hi');
+
+    
+    let btn_popup = document.querySelector("#popup");
+    btn_popup.addEventListener("click", function (){
+        let size = getSize();
+        createBoard(size);
+    })
+    
 })
 
 function createBoard(size) {
@@ -16,24 +25,45 @@ function createBoard(size) {
     let numDivs = size * size;
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
+        //draw hover
+        //NOT WORKING 
+        div.addEventListener("mouseover", colorDiv)
+    
+        
         board.appendChild(div);
-        div.style.backgroundColor = "yellow";
+        
     }
 
 }
 
 
 function getSize () {
-    let input = prompt("Enter a size of the board");
+    let input = prompt("What will be the size of the board?");
     let message = document.querySelector("#message");
     if (input == "") {
-        message.innerHTML = "Please provid a number";
+        message.innerHTML = "Please provide a number";
     }
     else if (input < 0 || input > 100) {
-        message.innerHTML = "Provide a between 1 and 100";
+        message.innerHTML = "Provide a number between 1 and 100";
     }
     else{
-        message.innerHTML = "Now you play";
+        message.innerHTML = "Now you play!";
+        return input;
     }
 }
  
+
+//
+
+function colorDiv () {
+   if (color == "random") {
+    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+   }
+   else {
+    this.style.backgroundColor = 'black';
+   }
+}
+
+function setColor(colorChoice) {
+ color = colorChoice;
+}

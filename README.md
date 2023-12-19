@@ -28,3 +28,6 @@ Welcome to my Etch A Sketch project, a part of the Odin Project's curriculum. Th
 
 - **Progressive Darkening:** Each interaction adds 10% more black to the square, aiming to achieve a completely black square after ten interactions. Although I think it still has a bug it only applies for the black color. Need to get back to it next month.
 
+
+Live preview: https://syscodex.github.io/etch-a-sketch/
+

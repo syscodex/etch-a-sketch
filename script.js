@@ -1,3 +1,7 @@
+
+
+
+
 let color = "black";
 
 let click = false;
@@ -12,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function(){
             click = !click;
             let draw = document.querySelector("#draw");
             if(click) {
-                draw.innerHTML = "Now you can draw";
+                draw.innerHTML = "Draw mode active";
         }
         else {
-            draw.innerHTML = "You are not allowed to draw";
+            draw.innerHTML = "Draw mode inactive";
         }
         }
     })
@@ -75,15 +79,19 @@ function colorDiv () {
    if(click) {
     if (color == "random") {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    } else {
+        // Darken the color progressively
+        darkness += 0.1;
+        this.style.backgroundColor = `rgba(0, 0, 0, ${darkness})`;
     }
-    else {
-        this.style.backgroundColor = 'black';
-    }
-    }
-    }
+}
+}
+
+
 
 function setColor(colorChoice) {
  color = colorChoice;
+ darkness = 0; // Reset darkness when changing color
 }
 
 //reset
@@ -91,4 +99,6 @@ function setColor(colorChoice) {
 function resetBoard() {
     let divs = document.querySelectorAll("div");
     divs.forEach((div) => div.style.backgroundColor = "white");
+    darkness = 0; // Reset darkness when resetting the board
 }
+

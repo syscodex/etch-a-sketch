@@ -3,6 +3,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
 }
 
 .header {
@@ -11,7 +13,7 @@ body {
   align-items: center;
   width:400px;
   justify-content: space-around;
-  margin-bottom:20px;
+  margin-bottom:15px;
   
 }
 
@@ -24,6 +26,9 @@ body {
   margin-top: 20px;
 }
 
+
+
+
 .board {
   width:500px;
   height:500px;
@@ -31,3 +36,5 @@ body {
   border: 1px solid rgb(13, 2, 2);
   
 }
+
+

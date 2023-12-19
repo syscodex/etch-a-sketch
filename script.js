@@ -22,4 +22,18 @@ function createBoard(size) {
 
 }
 
+
+function getSize () {
+    let input = prompt("Enter a size of the board");
+    let message = document.querySelector("#message");
+    if (input == "") {
+        message.innerHTML = "Please provid a number";
+    }
+    else if (input < 0 || input > 100) {
+        message.innerHTML = "Provide a between 1 and 100";
+    }
+    else{
+        message.innerHTML = "Now you play";
+    }
+}
  

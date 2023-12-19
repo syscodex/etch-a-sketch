@@ -67,3 +67,10 @@ function colorDiv () {
 function setColor(colorChoice) {
  color = colorChoice;
 }
+
+//reset
+//get all the divs and make it all white
+function resetBoard() {
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div) => div.style.backgroundColor = "white");
+}

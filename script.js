@@ -45,8 +45,7 @@ function createBoard(size) {
     let numDivs = size * size;
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
-        //draw hover
-        //NOT WORKING 
+       
         div.addEventListener("mouseover", colorDiv)
     
         
@@ -80,9 +79,8 @@ function colorDiv () {
     if (color == "random") {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     } else {
-        // Darken the color progressively
-        darkness += 0.1;
-        this.style.backgroundColor = `rgba(0, 0, 0, ${darkness})`;
+        
+        this.style.backgroundColor = 'black';
     }
 }
 }
@@ -91,7 +89,7 @@ function colorDiv () {
 
 function setColor(colorChoice) {
  color = colorChoice;
- darkness = 0; // Reset darkness when changing color
+ 
 }
 
 //reset
@@ -99,6 +97,6 @@ function setColor(colorChoice) {
 function resetBoard() {
     let divs = document.querySelectorAll("div");
     divs.forEach((div) => div.style.backgroundColor = "white");
-    darkness = 0; // Reset darkness when resetting the board
+    
 }
 

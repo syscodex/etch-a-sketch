@@ -5,6 +5,9 @@ body {
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
+  font-family: 'Courier New', Courier, monospace;
+  background: white;
+
 }
 
 .header {
@@ -27,6 +30,30 @@ body {
 }
 
 
+/* Add this to your existing CSS */
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.5em; /* Adjust font size for smaller screens */
+  }
+
+  .header {
+      flex-direction: column; /* Stack header items vertically on smaller screens */
+      text-align: center; /* Center-align text in header */
+  }
+
+  .board {
+      grid-template-columns: repeat(8, 1fr); /* Adjust grid size for smaller screens */
+  }
+
+  .footer {
+      flex-direction: column; /* Stack buttons vertically on smaller screens */
+      text-align: center; /* Center-align buttons in the footer */
+  }
+}
+
+
 
 
 .board {
@@ -35,6 +62,10 @@ body {
   display:grid;
   border: 1px solid rgb(13, 2, 2);
   
+}
+
+.board div:hover {
+  background-color: #8ba6c3;
 }
 
 
